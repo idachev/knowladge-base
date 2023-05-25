@@ -1,0 +1,10 @@
+To get the cert as base64 execute this:
+openssl s_client -connect sslvpn-sof.engx.vmware.com:443
+
+Copy the base64 encoded text in a file.txt
+
+Then decode it in a der file:
+base64 -d file.txt > file.der
+
+Use it in the connect.sh script.
+

@@ -1,0 +1,11 @@
+1. Check out a working copy of the ports tree to some place on your  
+hard disk, such as to your home directory:
+
+svn co http://svn.macports.org/repository/macports/trunk/dports ~/dports
+
+2. Edit the file /opt/local/etc/macports/sources.conf. Comment out  
+the line starting with "rsync://" and add a new line pointing to your  
+working copy, in URL form, e.g.:
+
+file:///Users/rschmidt/dports
+

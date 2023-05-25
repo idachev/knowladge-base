@@ -1,0 +1,23 @@
+vm.swappiness is a tunable kernel parameter that controls how much the
+kernel favors swap over RAM. At the source code level, it’s also defined
+as the tendency to steal mapped memory. A high swappiness value means
+that the kernel will be more apt to unmap mapped pages. A low swappiness
+value means the opposite, the kernel will be less apt to unmap mapped
+pages. In other words, the higher the vm.swappiness value, the more the
+system will swap.
+
+Edit:
+sudo vim /etc/sysctl.conf
+
+Search for vm.swappiness and change its value as desired.
+If vm.swappiness does not exist, add it to the end of the file like so:
+
+vm.swappiness=10
+
+To change the swappiness value a temporary change (lost on reboot) 
+with a swappiness value of 10 can be made with:
+sudo sysctl vm.swappiness=10
+
+To view the curent value:
+/proc/sys/vm/swappiness
+

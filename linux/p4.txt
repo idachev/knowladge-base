@@ -1,0 +1,14 @@
+List all my changes:
+p4 changes -u <user>
+
+Info for change:
+p4 describe 777777
+
+Commit na change:
+p4 submit -c 777777
+
+Delete of change:
+p4 change -d 777777
+
+Make diff:
+p5 diff -du -dw -c %1 > cl%1.diff

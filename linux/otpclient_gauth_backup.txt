@@ -1,0 +1,29 @@
+
+GAuth Backup
+
+Use https://github.com/dim13/otpauth
+
+It is already in ~/lib/bin/
+
+Once you have the exported GAuth QR codes scanned as links use this tool to decode:
+
+otpauth -link 'otpauth-migration://offline?data=...'
+
+To generate OTP use this:
+oathtool -b ...secret... --totp=sha1
+
+Chek parameters from the otpauth://totp/... link, for example:
+
+otpauth://totp/Google:i.dachev@gmail.com?algorithm=SHA1&digits=6&issuer=Google&period=30&secret=E...
+
+Here we have these:
+* algorithm=SHA1
+* digits=6
+* period=30
+* secret=E...
+
+To check on Linux desktop install:
+flatpak install flathub com.github.paolostivanin.OTPClient
+
+Import in OTPClient as FreeOTP+ URI keys txt file
+

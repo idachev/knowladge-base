@@ -1,0 +1,46 @@
+fs:/" (AEEFS_ROOT_DIR): the root of the BREW file namespace.  Prefacing
+          a path with this string tells BREW to interpret the filename
+          according to the new namespace rules.
+
+"fs:/~/" (AEEFS_HOME_DIR): this is a shortcut that denotes the
+          currently running application's directory.  It is mapped
+          to "fs:/mod/ <modid>" where <modid> is the module ID of
+          the currently running application.
+
+"fs:/sys/" (AEEFS_SYS_DIR): this is the location of BREW's "system"
+          files.  Access to this directory is restricted,  See
+          IFILEMGR_CheckPathAccess() for more information.
+
+"fs:/mod/" (AEEFS_MOD_DIR): the location of all the module directories
+
+"fs:/mif/" (AEEFS_MIF_DIR): the location of all of BREW's MIF files.
+
+"fs:/shared/" (AEEFS_SHARED_DIR): the new name for "Shared".  This
+          name can be used to share files with other applications
+          using case-sensitive names
+
+"fs:/address/" (AEEFS_ADDRESS_DIR): the location of the address book
+          directory.  This directory is only present when the
+          address book for the device is implemented using the default
+          BREW address book implementation.  It is mapped mostly for
+          backwards compatibility with the old BREW file
+          namespace AEE_ADDRBOOK_DIR ("addrbk") in AEE.h
+
+"fs:/ringers/" (AEEFS_RINGERS_DIR): the location of the device's ringer
+          directory.  An application must have PL_RINGER_WRITE (Write
+          Access to Ringer Directory) to access files in this
+          directory.
+
+"fs:/card0/" (AEEFS_CARD0_DIR): New for BREW 3.1, if a device supports
+          a removable media card format, this path maps to the first
+          instance of such a device.  An application must list
+          AEECLSID_CARD0_ACCESS in its MIF in the "Dependencies"
+          section to access files in this directory.
+
+"fs:/~ <clsid>/": New for BREW 3.1, an application may access files
+          in another application's directory.  <clsid> must be a
+          valid class id of an application or extension.  These
+          paths map to "fs:/mod/ <modid>" where <modid> is the
+          module id of the module that exports <clsid>.  The target
+          module must export this path via a module ACL.  See
+          IFILEMGR_CheckPathAccess() for more information. 

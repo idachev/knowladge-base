@@ -1,0 +1,19 @@
+Install minimal debian on a VM 512Mb-ram 10Gb-hdd
+
+Install openvpn
+
+Download the vpn config from strongvpn account
+
+Start the openvpn in screen:
+screen
+openvpn --config ./vpn-in129_ovpn250_account.ovpn
+ctrl-a d
+
+The VM is running locally where we have WiFi redirection for the strongvpn server.
+
+Make on the working PC a socks ssh tunel:
+ssh -D 9000 -Nn root@vm-ip
+
+Start chrome with socks:
+google-chrome --proxy-server="socks://localhost:9000"
+

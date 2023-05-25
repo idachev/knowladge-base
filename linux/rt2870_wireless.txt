@@ -1,0 +1,57 @@
+==========================================================================================
+There is problem and conflict with these modules add them to black list:
+/etc/modprobe.d/blacklist.conf
+
+blacklist rt2800usb
+blacklist rt2x00lib
+blacklist rt2x00usb
+
+==========================================================================================
+From here download the latest driver source compile it and install it:
+http://www.ralinktech.com/support.php?s=2
+
+Look for info in google there are several places how to do it.
+http://www.cyberciti.biz/tips/linux-install-rt2870-chipset-based-usb-wireless-adapter.html
+
+==========================================================================================
+To check the correct driver search for:
+lsmod | grep rt2
+
+Should found this:
+rt2870sta             525366  1
+
+==========================================================================================
+I also upgrade the firmeware:
+/lib/firmware/rt2870.bin
+
+from here:
+~/personal/linux/installs/drivers/ralink/RT2870_Firmware_V22/rt2870.bin
+
+the old one:
+~/personal/linux/installs/drivers/ralink/lib/firmware/rt2870.bin
+
+==========================================================================================
+Some usefulll commands for testing:
+
+to scan the wireless use this:
+sudo iwlist wlan0 scan
+
+to stop using the kernal model use this:
+sudo ifconfig wlan0 down
+
+to unload kernal model use this:
+sudo modprobe -r rt2870sta
+
+==========================================================================================
+Poneje :) usera mi e ot domaina edin vid mts grupata to pri connect prez 
+wifi se precakva tozi domain mts conenction i vsichko zaspiva kato iska da 
+accessne nqkoq ot mts vryzkite q v pytq q v shell prompta.
+
+Tyrsime reshenie :)
+
+The solution is to manipulate the routing table from this script:
+/etc/network/if-up.d/routes_ra0
+
+If I add eth0 to /etc/network/interfaces then the blocking
+occure with two default gateways in the routing table.
+So I will remove the eth0 from there and now it should work.

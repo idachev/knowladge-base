@@ -1,0 +1,9 @@
+
+From system preferences -> security enable allways to use lock screen
+for screensaver.
+
+From keychain access from apps -> utilities go to preferences and 
+click to show lock status in menu bar.
+
+This will show a nice menu on the right up from which you can lock.
+

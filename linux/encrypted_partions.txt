@@ -1,0 +1,107 @@
+======================================================================
+Install crypt setup
+sudo aptitude install cryptsetup
+
+======================================================================
+Load in kernal following mods:
+sudo modprobe dm-crypt
+sudo modprobe sha256
+sudo modprobe aes
+
+======================================================================
+Load needed modules on startup:
+sudo vim /etc/modules
+
+Add them at the end:
+dm-crypt
+sha256
+aes
+
+======================================================================
+List available disks and partions:
+sudo fdisk -l
+
+======================================================================
+Optional fill disk with random data:
+
+sudo dd if=/dev/zero of=/dev/...disk... bs=4K
+OR
+sudo badblocks -c 10240 -s -w -t random -v /dev/...disk...
+OR
+sudo dd if=/dev/urandom of=/dev/...disk... bs=4K
+
+======================================================================
+Make a partion table on the disk:
+sudo fdisk /dev/...disk...
+
+Commands:
+p print the partition table
+n create a new partition
+d delete a partition
+q quit without saving changes
+w write the new partition table and exit 
+
+======================================================================
+Encrypt desired partion:
+sudo cryptsetup --verify-passphrase luksFormat /dev/...part... -c aes -s 256 -h sha256
+
+It will prompt twice for a passphrase.
+
+Options:
+--verify-passphrase - ensures the passphrase is entered twice to avoid an incorrect passphrase being used
+-c aes -s 256 - uses 256-bit AES encryption
+-h sha256 - uses the 256-bit SHA hashing algorithm 
+
+======================================================================
+Mapping encrypted partion:
+sudo cryptsetup luksOpen /dev/...part... securename
+
+Now there should be prompt for the passphrase
+and a mapper device should be creates:
+/dev/mapper/securename
+
+======================================================================
+Creating a filesystem on ecrypted partion:
+sudo mkfs -t ext4 -m 1 -O dir_index,filetype,sparse_super -L label /dev/mapper/securename
+
+Options:
+-t ext3 - create an ext3 filesystem
+-m 1 - reduce the reserved super-user space down from the default of 5% to 1% of the total size - useful for large filesystems
+-O dir_index - speed-up lookups in large directories
+-O filetype - store filetype info in directories
+-O sparse_super - create fewer superblock backup copies - useful for large filesystems 
+
+======================================================================
+Mounting the device:
+
+======================================================================
+Change the owner:
+sudo chown -R user.user /media/label
+sudo chmod g+s /media/label
+
+======================================================================
+To add more passphrases:
+sudo cryptsetup luksAddKey /dev/...part...
+
+======================================================================
+To remove a passphrase:
+sudo cryptsetup luksKillSlot /dev/...part... #slot
+
+======================================================================
+To find out more info about encryption on the device:
+sudo cryptsetup status securename
+sudo cryptsetup luksDump /dev/...part...
+
+======================================================================
+Umount the encrypted mapper device and partion:
+sudo umount /media/label && sudo cryptsetup luksClose /dev/mapper/securename
+
+======================================================================
+Get smart infor for disks.
+
+For WD passport 500G use this:
+sudo smartctl -a -T permissive -d sat /dev/...disk...
+
+For hitachi 320G 3.5" use this:
+sudo smartctl -a /dev/...disk...
+

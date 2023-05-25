@@ -1,0 +1,7 @@
+This is the parameters to use over ssh with compresion and make continue privously canceled transfers.
+rsync -n --delete -u -FavzPO <src> <dst>
+
+Use -c to compare by content
+
+Use -n to do a dry run, which will dump what is going to be changed.
+

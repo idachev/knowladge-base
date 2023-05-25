@@ -1,0 +1,76 @@
+Steps to install OmniKey CM-6121 on Ubuntu 10.04  32/64-bit
+---------------------------------------------------------------------------------------------
+
+NEW NEW NEW
+
+http://wiki.infonotary.com/index.php/%D0%98%D0%B7%D0%BF%D0%BE%D0%BB%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5_%D0%BD%D0%B0_%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0%D1%82%D0%B0_%D0%BD%D0%B0_InfoNotary
+
+NEW NEW NEW
+
+
+Clean install without the need for the InfoNotary drivers  and CD-ROM    Усмивчица
+
+Execute each checkpoint condition until you get valid feedback from the executed command.
+Order is arguably important. Install in the following order:
+
+1. Checkpoint: pcsc_scan (test package availability)
+on fail:
+
+1.1. sudo apt-get install pcsc-tools
+
+1.2. sudo apt-get install pcscd
+
+2. Checkpoint: opensc-tool -i (test package availability)
+on fail:
+
+2.1. sudo apt-get install opensc
+
+2.2. required on ubuntu not debian
+     edit /etc/opensc/opensc.conf :
+     set "reader_drivers = pcsc;" only
+
+2.3  required on ubuntu and debian
+     edit /etc/opensc/opensc.conf:
+     set "max_virtual_slots = 4;"
+     set "slots_per_card = 1;"
+
+2.4. sudo apt-get install libpcsclite-dev
+
+2.5. sudo service pcscd restart
+
+3. Checkpoint: pkcs11-tool -I  (test package availability)
+On fail:
+
+3.1. sudo apt-get install pkcs11-tools 
+
+4. Checkpoint: pkcs11-tool -lt (test all certificates)
+failure may occur with RSA-2048 type certificate or more than 1 certificate at the smartcard
+
+4.1 on fail for ubuntu maverik 10.10:
+    sudo apt-get purge libccid
+    sudo apt-get install pcsc-omnikey
+    sudo service pcscd restart
+
+4.2 on fail debian wheezy new ubuntu and mint 2015:
+    Install the OMNIKEY driver
+
+    new: http://www.hidglobal.com/drivers/20084
+    tar xf ifdokccid_linux_x86_64-v4.1.5.tar.gz
+    cd ifdokccid_linux_x86_64-v4.1.5
+    sudo ./install
+
+    old: http://www.hidglobal.com/driverDownloads.php?techCat=19&prod_id=182#
+    tar xf ifdokccid_lnx_x64-3.7.0.tar.gz
+    cd ifdokccid_lnx_x64-3.7.0
+    sudo ./install -d /usr/lib/pcsc/drivers
+
+5. Checkpoint Firefox - "Log In" into the security device:
+
+5.1. Import InfoNotary chain into 'Your certificates'
+
+     http://www.infonotary.com/site/files/INotaryCertChain.p12
+
+5.2. Add new module at 'Security Devices'
+( the module should be /usr/lib/onepin-opensc-pkcs11.so )
+( for debian 64bi use /usr/lib/x86_64-linux-gnu/onepin-opensc-pkcs11.so )
+

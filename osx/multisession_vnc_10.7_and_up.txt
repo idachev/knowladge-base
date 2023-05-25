@@ -1,0 +1,12 @@
+You will need MAC OS X 10.7 and up.
+
+You should enable fast switching user menu.
+Add one more that will keep locked the real display all the time.
+
+Enable Screen Sharing with VNC password, not remote management.
+
+On the real display login with above created user and lock the screen.
+
+After that with a VNC client you will be able to connect to the mac
+and login in virtual displayes.
+

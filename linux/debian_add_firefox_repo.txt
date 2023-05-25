@@ -1,0 +1,20 @@
+deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main
+
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80/ C1289A29
+sudo apt-get update
+
+sudo apt-get install firefox-mozilla-build
+sudo apt-get install thunderbird-mozilla-build
+
+sudo update-alternatives --install  /usr/bin/x-www-browser x-www-browser /opt/firefox/firefox 100
+
+sudo update-alternatives --config x-www-browser
+
+sudo update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /opt/firefox/firefox 100
+
+sudo update-alternatives --config gnome-www-browser
+
+xdg-mime default firefox-mozilla-build.desktop text/html
+
+xdg-mime query default text/html
+

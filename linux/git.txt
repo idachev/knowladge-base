@@ -1,0 +1,10 @@
+Sync branch with remote repo:
+git checkout master
+git pull
+get checkout bug777777
+git rebase master
+
+Update lost changeset tag:
+git tag -f changeset-777777
+git changeset update
+

@@ -1,0 +1,16 @@
+To be able to share one ssh-agent instance between all your logins use this in .zshrc:
+
+# add keychain ssh-agent variables
+keychain -q ~/.ssh/id_dsa_a
+. ~/.keychain/$HOST-sh
+. ~/.keychain/$HOST-sh-gpg
+
+Also this is helpfull for cron jobs:
+30 02 * * * . /home/<user>/.keychain/*-sh && . /home/<user>/.keychain/*-sh-gpg && /usr/bin/env python ...
+
+Or just put these into the script if it is not a python but sh/bash/zsh:
+. /home/<user>/.keychain/*-sh
+. /home/<user>/.keychain/*-sh-gpg
+
+Know that in cron session there is no $HOST env so I use * in above calls.
+

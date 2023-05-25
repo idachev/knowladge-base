@@ -1,0 +1,32 @@
+Hey amar....working is same as of Subrib, but personally I found Vobsub better & easier than Subrib. Here's how to extract subtitles :
+
+(A) Creating .SUB file from VOB.
+Start 'VobSub Configure' application from VobSub folder:
+
+1. Click --> Open...
+2. In new window that popsup select 'IFO and VOBS, for creating IDX/SUB (*.IFO)' from drop down menu & browse to the directory holding VIDEO_TS files, Select the file 'VTS_01_0.
+3. Select the location for saving the files.
+4. Now another popup appears, asking you to select a PGC (ProGram Chain) ... by default the settings are fine. Click 'OK' to continue.
+5. VobSub starts indexing the subtitles, It may take a while for it to complete. When its ready click OK.
+6. Now on VobSub Configure application window leave the settings as they are. Click 'OK' to start the copying process. Once finished, the VobSub window disappears.
+
+VobSub had created 2 new files(sometimes 3)in the directory you indicated before. These files are named like your ifo file,:
+
+vts_01_0.ifo(this is not always created)
+vts_01_0.idx
+vts_01_0.sub <-----this .SUB file is needed for further conversion.
+
+
+(B) Converting .SUB to .SRT file.
+Start 'subresync.exe' application from VobSub folder
+
+1. Open the 'vts_01_0.sub' file, saved in previous step.
+2. Click 'Save as...'select subripper(*.srt) from drop down menu. Clicking save will popup a new window 'Enter matching letter(s)'.
+3. A letter highlighted with red square wud be in display window. Now you have to type in the correct letter as it asks. When you type the letter the 'Skip' button turns 'Add',......so keep on adding letters.
+
+Now here Its important not to put in the wrong letter and also to make sure that the capital and lower case letters are correct. Tthe reading process will get faster as you go along. After the first 30 or so letters the computer will almost completely take over. One more thing if u see half letter use 'Extend', if there are 2 letters in the red square add 2 letters. You can also use 'Skip' if needed.
+
+When all the letters are done the 'Enter matching letter(s)' window wud disappear.....now you can close 'subresync.exe'.
+Your vts_01_0.srt file is saved where u wanted.
+
+Hope this helps.

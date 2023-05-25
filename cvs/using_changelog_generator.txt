@@ -1,0 +1,16 @@
+Scripta bat fila za pravene e 
+
+------------------------------------------------------------------------------
+
+rem cd.. 
+
+set PATH=%PATH%;C:\Program Files\TortoiseCVS
+
+set CVS_RSH=C:\Program Files\TortoiseCVS\TortoisePlink.exe
+
+perl -w change-log\cvs2cl.pl --prune -S --no-wrap --window 28800 --fsf --regexp "(src/.*)|(demo/.*)" --delta mgui5-2-71:mgui5-2-72 -f change-log\ChangeLog-full-build72.txt 
+pause 
+
+------------------------------------------------------------------------------
+
+Runva se v main dira 

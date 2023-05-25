@@ -1,0 +1,5 @@
+To fix the fonts do this:
+sudo apt-get install tk8.5
+
+And switch to it in the wish:
+sudo update-alternatives --config wish

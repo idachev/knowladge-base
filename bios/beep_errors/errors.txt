@@ -1,0 +1,21 @@
+AWARD BIOS  
+Beep Sound  Massage 
+1 short(Beep) System booting is normally. 
+2 short(Beep) CMOS setting error 
+1 long - 1 short(Beep) DRAM ERROR 
+1 long - 2 short(Beep) Display card or monitor connected error 
+1 long - 3 short(Beep) Keyboard Error 
+1 long - 9 short(Beep) ROM Error 
+Long(Beep) continuous DRAM hasn't inset correctly. 
+Short(Beep) continuous POWER supply has problem. 
+
+AMI BIOS  
+1 short(Beep) DRAM Flash Error 
+2 short(Beep) DRAM ECC Check Error 
+3 short(Beep) DRAM Detect Fail 
+5 short(Beep) CPU Error 
+6 short(Beep) Keyboard Error 
+8 short(Beep) Display card memory Error 
+9 short(Beep) ROM Error 
+1 long - 3 short(Beep) DRAM Damage 
+1 long - 8 short(Beep) Display card or monitor connected error 

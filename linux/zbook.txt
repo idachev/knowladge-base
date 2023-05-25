@@ -1,0 +1,37 @@
+System:    Host: mint Kernel: 5.0.0-32-generic x86_64 bits: 64 compiler: gcc v: 7.4.0 Desktop: Cinnamon 4.4.5 
+           Distro: Linux Mint 19.3 Tricia base: Ubuntu 18.04 bionic 
+Machine:   Type: Laptop System: HP product: HP ZBook 15 G3 v: N/A serial: USH750L15T 
+           Mobo: HP model: 80D5 v: KBC Version 10.70 serial: PFTDNQ21V9989G UEFI: HP v: N81 Ver. 01.17 date: 09/27/2017 
+Battery:   ID-1: BAT0 charge: 73.7 Wh condition: 73.7/73.7 Wh (100%) model: Hewlett-Packard Primary status: Full 
+           Device-1: hidpp_battery_0 model: Logitech MX Ergo Multi-Device Trackball charge: 55% status: Discharging 
+Memory:    RAM: total: 31.33 GiB used: 2.14 GiB (6.8%) 
+           Array-1: capacity: 32 GiB slots: 4 EC: Single-bit ECC max module size: 8 GiB note: est. 
+           Device-1: Bottom-Slot 2(right) size: 8 GiB speed: 2133 MT/s type: DDR4 
+           Device-2: Top-Slot 2(right) size: 8 GiB speed: 2133 MT/s type: DDR4 
+           Device-3: Bottom-Slot 1(left) size: 8 GiB speed: 2133 MT/s type: DDR4 
+           Device-4: Top-Slot 1(left) size: 8 GiB speed: 2133 MT/s type: DDR4 
+CPU:       Topology: Quad Core model: Intel Xeon E3-1505M v5 bits: 64 type: MT MCP arch: Skylake-S rev: 3 L2 cache: 8192 KiB 
+           flags: lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx bogomips: 44928 
+           Speed: 800 MHz min/max: 800/3700 MHz Core speeds (MHz): 1: 966 2: 2237 3: 1101 4: 1135 5: 1293 6: 1859 7: 2593 
+           8: 1161 
+Graphics:  Device-1: NVIDIA GM107GLM [Quadro M2000M] vendor: Hewlett-Packard driver: nouveau v: kernel bus ID: 01:00.0 
+           Display: server: X.Org 1.20.4 driver: modesetting unloaded: fbdev,vesa resolution: 1920x1080~60Hz 
+           OpenGL: renderer: NV117 v: 4.3 Mesa 19.0.8 direct render: Yes 
+Audio:     Device-1: Intel 100 Series/C230 Series Family HD Audio vendor: Hewlett-Packard Sunrise Point-H 
+           driver: snd_hda_intel v: kernel bus ID: 00:1f.3 
+           Device-2: NVIDIA vendor: Hewlett-Packard driver: snd_hda_intel v: kernel bus ID: 01:00.1 
+           Sound Server: ALSA v: k5.0.0-32-generic 
+Network:   Device-1: Intel Ethernet I219-LM vendor: Hewlett-Packard driver: e1000e v: 3.2.6-k port: efa0 bus ID: 00:1f.6 
+           IF: enp0s31f6 state: down mac: ac:e2:d3:3e:09:ed 
+           Device-2: Intel Wireless 8260 driver: iwlwifi v: kernel port: 3000 bus ID: 03:00.0 
+           IF: wlp3s0 state: down mac: f4:96:34:c9:1a:bc 
+Drives:    Local Storage: total: 5.04 TiB used: 1.36 TiB (26.9%) 
+           ID-1: /dev/nvme0n1 vendor: Samsung model: MZVKW512HMJP-000H1 size: 476.94 GiB 
+           ID-2: /dev/nvme1n1 vendor: Samsung model: MZVKW512HMJP-000H1 size: 476.94 GiB 
+           ID-3: /dev/sda vendor: Seagate model: ST1000LM014-1EJ164 size: 931.51 GiB temp: 33 C 
+           ID-4: /dev/sdb type: USB model: SMI USB DISK size: 29.30 GiB 
+           ID-5: /dev/sdc type: USB vendor: Seagate model: Backup+ Hub BK size: 3.64 TiB 
+Partition: ID-1: / size: 15.67 GiB used: 26.5 MiB (0.2%) fs: overlay source: ERR-102 
+Sensors:   System Temperatures: cpu: 41.0 C mobo: N/A gpu: nouveau temp: 43 C 
+           Fan Speeds (RPM): N/A 
+Info:      Processes: 243 Uptime: 7m Init: systemd runlevel: 5 Compilers: gcc: 7.4.0 Shell: bash v: 4.4.20 inxi: 3.0.32 

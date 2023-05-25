@@ -1,0 +1,68 @@
+================================================================================
+Sources:
+http://opentechnow.blogspot.com/2010/02/linux-ssd-optimization-guide.html
+http://www.ocztechnologyforum.com/forum/showthread.php?54379-Linux-Tips-tweaks-and-alignment&highlight=linux
+http://www.howtogeek.com/62761/how-to-tweak-your-ssd-in-ubuntu-for-better-performance/
+
+================================================================================
+Changing write cache:
+hdparm -W1 /dev/sda
+
+in /etc/rc.local
+
+================================================================================
+Adding discard,noatime,nodiratime to fstab as ext4 parameter.
+
+/  ext4  discard,noatime,nodiratime,errors=remount-ro 0  1
+
+================================================================================
+Make tmp dirs to tmpfs, in fstab
+tmpfs    /tmp        tmpfs    noatime,nodiratime,defaults    0  0
+tmpfs    /var/tmp    tmpfs    noatime,nodiratime,defaults    0  0
+tmpfs    /var/log    tmpfs    noatime,nodiratime,defaults    0  0
+
+================================================================================
+Creating some var log dirs each time for tmpfs, put this 
+in /etc/rc.local
+
+for dir in apparmor apt ConsoleKit cups dist-upgrade fsck gdm installer news ntpstats samba unattended-upgrades ; do
+if [ ! -e /var/log/$dir ] ; then
+mkdir /var/log/$dir
+fi
+done
+
+================================================================================
+Kernel optimizations adding in GRUB_CMDLINE_LINUX_DEFAULT:
+elevator=deadline
+
+in /etc/default/grub
+
+[...]
+GRUB_TIMEOUT="10"
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash elevator=deadline"
+GRUB_CMDLINE_LINUX=""
+[...]
+
+To set the io schduler right now use:
+sudo -i
+echo deadline > /sys/block/sda/queue/scheduler
+
+Only for deadline set for /sys/block/sda/
+sudo -i
+echo 1 > /sys/block/sda/queue/iosched/fifo_batch
+
+========================================
+Some benchmarking on above option:
+http://ubuntuforums.org/showthread.php?t=1464706
+
+================================================================================
+Changing swappines to 0
+in /etc/sysctl.conf
+
+vm.swappiness = 0
+
+================================================================================
+================================================================================
+================================================================================
+================================================================================

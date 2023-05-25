@@ -1,0 +1,8 @@
+sudo vim /usr/share/pyshared/softwareproperties/ppa.py
+
+To make add-apt-repository use port 80 by default, the /usr/share/pyshared/softwareproperties/ppa.py 
+file used by add-apt-repository can be modified to use port 80.
+Edit the file /usr/share/pyshared/softwareproperties/ppa.py
+Search for "keyserver.ubuntu.com"
+Replace it by "hkp://keyserver.ubuntu.com:80" and save the file
+add-apt-repository should work behind a proxy now.

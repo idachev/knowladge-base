@@ -1,0 +1,2 @@
+cd /usr/share/icons
+sudo ln -s oxy-neon default

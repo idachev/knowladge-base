@@ -1,0 +1,30 @@
+================================================================================
+Go to System -> Preferences -> Appearance -> Fonts Tab -> Details button
+Here check full option in Hinting
+
+================================================================================
+NOT USED see kde and X server
+Disable layout change in vncserver auto startup script
+
+Just got that fixed by adding 'export XKL_XMODMAP_DISABLE=1' 
+in $HOME/.vnc/xstartup before the last line /etc/X11/Xsession
+
+================================================================================
+Install kde in Linux
+
+Configure these in Linux:
+Allow XDMCP in kde:
+/etc/kde4/kdm/kdmrc
+
+Allow * in /etc/kde4/kdm/Xaccess
+
+Restart services:
+sudo service kdm restart
+
+see: http://wiki.archlinux.org/index.php/Xdmcp
+
+Install X-Win32 in Windows
+
+Configure in X-win32 to broadcast and it should find the Linux.
+
+================================================================================

@@ -1,0 +1,5 @@
+Some of the browsers will set the proxy env vars to 
+/etc/environment
+
+They should be removed for where is not wanted.
+

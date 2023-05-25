@@ -1,0 +1,22 @@
+================================================================================
+
+To set custom date format for folder mail listing check these:
+http://kb.mozillazine.org/Date_display_format
+https://ccollins.wordpress.com/2009/01/06/how-to-change-date-formats-on-ubuntu/
+
+sudo cp ~/personal/settings/linux/system/usr/share/i18n/locales/en_custom /usr/share/i18n/locales/en_custom
+sudo localedef -f UTF-8 -i en_custom en_custom.UTF-8
+
+Use this to start thunderbird:
+LC_TIME="en_custom.UTF-8" thunderbird $@
+
+Or:
+~/bin/thunderbird_custom.sh
+
+================================================================================
+
+After installing in Linux all of the addons should be reinstalled if profile comes from windows:
+- lightning
+- enigmail
+- provider for lightning
+

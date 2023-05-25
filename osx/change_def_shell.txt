@@ -1,0 +1,4 @@
+Add '/usr/local/bin/zsh' to /etc/shells
+Then execute this:
+chsh -s /usr/local/bin/zsh
+
