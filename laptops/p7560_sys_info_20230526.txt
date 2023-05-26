@@ -1,0 +1,95 @@
+System:
+  Host: idachev-p7560 Kernel: 5.15.0-72-generic x86_64 bits: 64 compiler: gcc
+    v: 11.3.0 Desktop: Cinnamon 5.6.8 Distro: Linux Mint 21.1 Vera
+    base: Ubuntu 22.04 jammy
+Machine:
+  Type: Laptop System: Dell product: Precision 7560 v: N/A serial: 1HB94M3
+  Mobo: Dell model: 0Y1R4H v: A01 serial: /1HB94M3/CNCMK0021E01A5/
+    UEFI: Dell v: 1.5.0 date: 10/01/2021
+Battery:
+  ID-1: BAT0 charge: 68.1 Wh (100.0%) condition: 68.1/95.0 Wh (71.7%)
+    volts: 12.6 min: 11.4 model: SMP DELL 68ND31C status: Full
+  Device-1: hidpp_battery_0 model: Logitech MX Ergo Multi-Device Trackball
+    charge: 55% (should be ignored) status: Discharging
+Memory:
+  RAM: total: 62.02 GiB used: 22.28 GiB (35.9%)
+  Array-1: capacity: 128 GiB slots: 4 EC: Single-bit ECC
+    max-module-size: 32 GiB note: est.
+  Device-1: DIMM C size: 32 GiB speed: 3200 MT/s type: DDR4
+  Device-2: DIMM D size: No Module Installed
+  Device-3: DIMM A size: 32 GiB speed: 3200 MT/s type: DDR4
+  Device-4: DIMM B size: No Module Installed
+CPU:
+  Info: 8-core model: Intel Xeon W-11955M bits: 64 type: MT MCP
+    arch: Tiger Lake rev: 1 cache: L1: 640 KiB L2: 10 MiB L3: 24 MiB
+  Speed (MHz): avg: 1401 high: 2787 min/max: 800/5000:4900 cores: 1: 1747
+    2: 1117 3: 1830 4: 2787 5: 982 6: 1554 7: 832 8: 1565 9: 1257 10: 2185
+    11: 801 12: 1489 13: 801 14: 1263 15: 1089 16: 1126 bogomips: 83558
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+Graphics:
+  Device-1: Intel vendor: Dell driver: i915 v: kernel bus-ID: 00:02.0
+  Device-2: Logitech HD Pro Webcam C920 type: USB
+    driver: snd-usb-audio,uvcvideo bus-ID: 3-12.3.3.3:14
+  Device-3: Microdia Integrated_Webcam_HD type: USB driver: uvcvideo
+    bus-ID: 3-3:2
+  Display: server: X.Org v: 1.21.1.4 driver: X: loaded: modesetting
+    unloaded: fbdev,vesa gpu: i915 resolution: 1920x1080~60Hz
+  OpenGL: renderer: Mesa Intel UHD Graphics (TGL GT1) v: 4.6 Mesa 22.2.5
+    direct render: Yes
+Audio:
+  Device-1: Intel Tiger Lake-H HD Audio vendor: Dell driver: snd_hda_intel
+    v: kernel bus-ID: 00:1f.3
+  Device-2: GN Netcom Jabra Link 370 type: USB
+    driver: jabra,snd-usb-audio,usbhid bus-ID: 3-11:4
+  Device-3: Plantronics Plantronics Blackwire 325.1 type: USB
+    driver: plantronics,snd-usb-audio,usbhid bus-ID: 3-12.3.1:10
+  Device-4: Logitech HD Pro Webcam C920 type: USB
+    driver: snd-usb-audio,uvcvideo bus-ID: 3-12.3.3.3:14
+  Sound Server-1: ALSA v: k5.15.0-72-generic running: yes
+  Sound Server-2: PulseAudio v: 15.99.1 running: yes
+  Sound Server-3: PipeWire v: 0.3.48 running: yes
+Network:
+  Device-1: Intel Ethernet I219-LM vendor: Dell driver: e1000e v: kernel
+    port: N/A bus-ID: 00:1f.6
+  IF: enp0s31f6 state: down mac: a0:29:19:69:e5:e3
+  Device-2: Intel Wi-Fi 6 AX210/AX211/AX411 160MHz driver: iwlwifi
+    v: kernel bus-ID: 93:00.0
+  IF: wlp147s0 state: down mac: 2c:0d:a7:76:e3:23
+  Device-3: Realtek RTL8153 Gigabit Ethernet Adapter type: USB
+    driver: r8152 bus-ID: 2-2.4:4
+  IF: enxa02919e799fd state: up speed: 1000 Mbps duplex: full
+    mac: a0:29:19:e7:99:fd
+  IF-ID-1: docker0 state: down mac: 02:42:6d:5d:df:37
+  IF-ID-2: tun0 state: unknown speed: 10 Mbps duplex: full mac: N/A
+  IF-ID-3: ztnfaaw5ld state: unknown speed: 10 Mbps duplex: full
+    mac: 6a:b7:eb:91:03:18
+Bluetooth:
+  Device-1: Intel AX210 Bluetooth type: USB driver: btusb v: 0.8
+    bus-ID: 3-14:6
+  Report: hciconfig ID: hci0 rfk-id: 0 state: up address: 2C:0D:A7:76:E3:27
+Drives:
+  Local Storage: total: 2.77 TiB used: 1.54 TiB (55.5%)
+  ID-1: /dev/nvme0n1 vendor: Samsung model: PM9A1 NVMe 1024GB
+    size: 953.87 GiB temp: 53.9 C
+  ID-2: /dev/nvme1n1 vendor: Samsung model: MZVL21T0HCLR-00B00
+    size: 953.87 GiB temp: 40.9 C
+  ID-3: /dev/nvme2n1 vendor: Samsung model: SSD 970 EVO Plus 1TB
+    size: 931.51 GiB temp: 41.9 C
+Partition:
+  ID-1: / size: 124.93 GiB used: 20.21 GiB (16.2%) fs: ext4 dev: /dev/dm-1
+    mapped: vgmint-root
+  ID-2: /boot size: 1.61 GiB used: 283.2 MiB (17.2%) fs: ext4
+    dev: /dev/nvme0n1p2
+  ID-3: /boot/efi size: 511 MiB used: 6.1 MiB (1.2%) fs: vfat
+    dev: /dev/nvme0n1p1
+  ID-4: /home size: 801.81 GiB used: 342.74 GiB (42.7%) fs: ext4
+    dev: /dev/dm-3 mapped: vgmint-home
+Swap:
+  ID-1: swap-1 type: partition size: 8 GiB used: 0 KiB (0.0%) dev: /dev/dm-2
+    mapped: vgmint-swap_1
+Sensors:
+  System Temperatures: cpu: 55.0 C mobo: N/A
+  Fan Speeds (RPM): N/A
+Info:
+  Processes: 516 Uptime: 21h 33m Init: systemd runlevel: 5 Compilers:
+  gcc: 11.3.0 Packages: 3309 Shell: Sudo v: 1.9.9 inxi: 3.3.13
